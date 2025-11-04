@@ -25,5 +25,7 @@ jobs:
           mvn spotbugs:check
 
       - name: OWASP Dependency Check
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
         run: |
-          mvn org.owasp:dependency-check-maven:check
+          ./gradlew dependencyCheckAnalyze

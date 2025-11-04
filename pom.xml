@@ -115,7 +115,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>8.4.0</version>
+                <version>9.0.9</version>
                 <executions>
                     <execution>
                         <goals>
@@ -125,6 +125,9 @@
                 </executions>
                 <configuration>
                     <failBuildOnCVSS>8</failBuildOnCVSS>
+                    <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
+                    <cveValidForHours>24</cveValidForHours>
+                    <connectionTimeout>60000</connectionTimeout>
                 </configuration>
             </plugin>
         </plugins>
