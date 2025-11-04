@@ -1,7 +1,6 @@
 package security.infseclab1.controller;
 
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import security.infseclab1.domain.dto.SetStatusRequest;
@@ -12,7 +11,7 @@ import security.infseclab1.service.UserService;
 public class UserController {
     private final UserService userService;
 
-    public UserController(UserService userService) {
+    public UserController(final UserService userService) {
         this.userService = userService;
     }
 
