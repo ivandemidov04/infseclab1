@@ -14,7 +14,7 @@ import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
-public class UserService {
+public final class UserService {
     private final UserRepository userRepository;
 
     public User save(User user) {

@@ -18,7 +18,7 @@ public final class ValidationErrorResponse {
     }
 
     public String getMessage() { return message; }
-    public Map<String, String> getFieldErrors() { return fieldErrors; }
+    public Map<String, String> getFieldErrors() { return Collections.unmodifiableMap(fieldErrors); }
     public String getError() { return error; }
     public int getStatus() { return status; }
 }
