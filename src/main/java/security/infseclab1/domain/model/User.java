@@ -16,6 +16,8 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "users")
 public class User implements UserDetails {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
