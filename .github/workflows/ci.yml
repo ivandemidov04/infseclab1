@@ -28,4 +28,11 @@ jobs:
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
         run: |
-          mvn org.owasp:dependency-check-maven:check
+          docker run --rm \
+            -v ${{ github.workspace }}:/src \
+            -e NVD_API_KEY=${{ secrets.NVD_API_KEY }} \
+            owasp/dependency-check:latest \
+            --scan /src \
+            --format HTML \
+            --failOnCVSS 8 \
+            --project "my-project"
