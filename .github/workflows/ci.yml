@@ -23,7 +23,8 @@ jobs:
       - name: Run SpotBugs
         run: |
           mvn compile
-          mvn spotbugs:spotbugs
+          mvn spotbugs:spotbugs -Dspotbugs.includeHtml=true
+          mvn spotbugs:gui
 
       - name: Find and upload report
         run: |
