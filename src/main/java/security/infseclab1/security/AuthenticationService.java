@@ -11,12 +11,18 @@ import security.infseclab1.domain.model.User;
 import security.infseclab1.service.UserService;
 
 @Service
-@RequiredArgsConstructor
 public class AuthenticationService {
     private final UserService userService;
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
+
+    public AuthenticationService(UserService userService, JwtService jwtService, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager) {
+        this.userService = userService;
+        this.jwtService = jwtService;
+        this.passwordEncoder = passwordEncoder;
+        this.authenticationManager = authenticationManager;
+    }
 
     public JwtAuthenticationResponse auth(LoginRequest request) {
         if (userService.existsByUsername(request.getUsername())) {
