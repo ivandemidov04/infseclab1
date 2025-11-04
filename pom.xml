@@ -125,9 +125,7 @@
                 </executions>
                 <configuration>
                     <failBuildOnCVSS>8</failBuildOnCVSS>
-                    <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
-                    <cveValidForHours>24</cveValidForHours>
-                    <connectionTimeout>60000</connectionTimeout>
+                    <autoUpdate>false</autoUpdate>
                 </configuration>
             </plugin>
         </plugins>
