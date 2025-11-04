@@ -37,5 +37,4 @@ jobs:
             --project "infseclab1" \
             --format HTML \
             --failOnCVSS 8 \
-            --enableExperimental \
-            --noupdate
+            --enableExperimental
