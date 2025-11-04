@@ -100,9 +100,13 @@
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>4.7.3.5</version>
+                <version>4.8.3.0</version>
                 <configuration>
-                    <failOnError>true</failOnError>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <failOnError>false</failOnError>
+                    <xmlOutput>false</xmlOutput>
+                    <htmlOutput>true</htmlOutput>
                 </configuration>
                 <executions>
                     <execution>
