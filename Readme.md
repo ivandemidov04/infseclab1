@@ -57,6 +57,6 @@
 **Security конфигурация:**
 - Эндпоинты `/auth/**` публичные, остальные требуют аутентификации
 
-## Последний успешный запуск pipeline
+## Последний запуск pipeline
 
-![CI/CD](https://github.com/ivandemidov04/infseclab1/workflows/Security%20Scan/badge.svg?branch=master&event=push)
+![Security Scan](https://github.com/ivandemidov04/infseclab1/actions/workflows/ci.yml/badge.svg)](https://github.com/ivandemidov04/infseclab1/actions/workflows/ci.yml)
