@@ -22,10 +22,20 @@ jobs:
 
       - name: Run SpotBugs
         run: |
-          mvn compile spotbugs:spotbugs
+          mvn compile
+          mvn spotbugs:spotbugs
 
-      - name: Upload SpotBugs report
+      - name: Find and upload report
+        run: |
+          find . -name "spotbugs*" -type f
+        continue-on-error: true
+
+      - name: Upload whatever exists
         uses: actions/upload-artifact@v4
         with:
           name: spotbugs-report
-          path: target/spotbugs.xml
+          path: |
+            target/spotbugs.xml
+            target/spotbugs.html
+            **/spotbugs*
+          if-no-files-found: ignore
