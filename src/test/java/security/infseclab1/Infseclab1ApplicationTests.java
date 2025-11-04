@@ -1,0 +1,13 @@
+package security.infseclab1;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Infseclab1ApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
