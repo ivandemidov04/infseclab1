@@ -31,13 +31,11 @@ jobs:
           echo "$(pwd)/dependency-check/bin" >> $GITHUB_PATH
 
       - name: OWASP Dependency Check
-        env:
-          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
         run: |
           dependency-check.sh \
             --scan . \
             --project "infseclab1" \
             --format HTML \
             --failOnCVSS 8 \
-            --nvdApiKey $NVD_API_KEY \
-            --enableExperimental
+            --enableExperimental \
+            --noupdate
