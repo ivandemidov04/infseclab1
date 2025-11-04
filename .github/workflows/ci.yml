@@ -35,4 +35,5 @@ jobs:
             --scan /src \
             --format HTML \
             --failOnCVSS 8 \
-            --project "my-project"
+            --project "infseclab1" \
+            --enableExperimental
