@@ -6,11 +6,8 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import security.infseclab1.domain.dto.RegisterRequest;
 import security.infseclab1.domain.dto.LoginRequest;
 import security.infseclab1.domain.model.User;
-import security.infseclab1.error.InvalidUpdateException;
-import security.infseclab1.error.UserAlreadyExistsException;
 import security.infseclab1.service.UserService;
 
 @Service
@@ -21,12 +18,20 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
 
-    public JwtAuthenticationResponse register(RegisterRequest request) {
+    public JwtAuthenticationResponse auth(LoginRequest request) {
+        if (userService.existsByUsername(request.getUsername())) {
+            return this.login(request);
+        } else {
+            return this.register(request);
+        }
+    }
+
+    public JwtAuthenticationResponse register(LoginRequest request) {
 
         var user = User.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .status(request.getStatus())
+                .status("default")
                 .build();
 
         userService.create(user);
