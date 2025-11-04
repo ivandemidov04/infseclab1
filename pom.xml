@@ -125,7 +125,10 @@
                 </executions>
                 <configuration>
                     <failBuildOnCVSS>8</failBuildOnCVSS>
-                    <autoUpdate>false</autoUpdate>
+                    <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
+                    <nvdApiDelay>10000</nvdApiDelay>
+                    <connectionTimeout>300000</connectionTimeout>
+                    <readTimeout>300000</readTimeout>
                 </configuration>
             </plugin>
         </plugins>
