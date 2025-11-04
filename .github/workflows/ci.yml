@@ -40,4 +40,4 @@ jobs:
             --format HTML \
             --failOnCVSS 8 \
             --nvdApiKey $NVD_API_KEY \
-            --disableNexus
+            --enableExperimental
