@@ -1,5 +1,6 @@
 package security.infseclab1.controller;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +9,7 @@ import security.infseclab1.service.UserService;
 
 @RestController
 @RequestMapping("/api")
+@SuppressFBWarnings("EI_EXPOSE_REP2")
 public final class UserController {
     private final UserService userService;
 

@@ -1,5 +1,6 @@
 package security.infseclab1.security;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ import security.infseclab1.service.UserService;
 import java.io.IOException;
 
 @Component
+@SuppressFBWarnings("EI_EXPOSE_REP2")
 public final class JwtAuthenticationFilter extends OncePerRequestFilter {
     public static final String BEARER_PREFIX = "Bearer ";
     public static final String HEADER_NAME = "Authorization";

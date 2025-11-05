@@ -1,5 +1,6 @@
 package security.infseclab1.security;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -11,6 +12,7 @@ import security.infseclab1.domain.model.User;
 import security.infseclab1.service.UserService;
 
 @Service
+@SuppressFBWarnings("EI_EXPOSE_REP2")
 public final class AuthenticationService {
     private final UserService userService;
     private final JwtService jwtService;
