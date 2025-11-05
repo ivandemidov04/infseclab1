@@ -49,7 +49,7 @@
 
 ## Скриншот отчет SAST
 
-
+![report](https://github.com/ivandemidov04/infseclab1/report.png)
 
 ## Последний запуск pipeline
 
