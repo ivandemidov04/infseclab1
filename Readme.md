@@ -47,10 +47,10 @@
 **Security конфигурация:**
 - Эндпоинты `/auth/**` публичные, остальные требуют аутентификации
 
-## Скриншот отчет SAST
+## Отчет SAST
 
-![report](https://github.com/ivandemidov04/infseclab1/report.png)
+![Spotbugs Report](report.png)
 
-## Последний запуск pipeline
+## Статус сборки
 
-![Security Scan](https://github.com/ivandemidov04/infseclab1/actions/workflows/ci.yml/badge.svg)](https://github.com/ivandemidov04/infseclab1/actions/workflows/ci.yml)
+[![Security Scan](https://github.com/ivandemidov04/infseclab1/actions/workflows/ci.yml/badge.svg)](https://github.com/ivandemidov04/infseclab1/actions/workflows/ci.yml)
