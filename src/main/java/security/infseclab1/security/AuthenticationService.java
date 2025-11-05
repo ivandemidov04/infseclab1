@@ -11,7 +11,7 @@ import security.infseclab1.domain.model.User;
 import security.infseclab1.service.UserService;
 
 @Service
-public class AuthenticationService {
+public final class AuthenticationService {
     private final UserService userService;
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;

@@ -8,7 +8,7 @@ import security.infseclab1.service.UserService;
 
 @RestController
 @RequestMapping("/api")
-public class UserController {
+public final class UserController {
     private final UserService userService;
 
     public UserController(final UserService userService) {
