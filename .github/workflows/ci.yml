@@ -24,12 +24,7 @@ jobs:
         run: |
           mvn compile spotbugs:spotbugs
 
-      - name: Find and upload report
-        run: |
-          find . -name "spotbugs*" -type f
-        continue-on-error: true
-
-      - name: Upload whatever exists
+      - name: Upload SpotBugs report
         uses: actions/upload-artifact@v4
         with:
           name: spotbugs-report
